@@ -1,0 +1,103 @@
+<div style="display: flex;">
+    <div class="wrapper-30 fadeInDown" *ngIf="userDetails">
+        <table class="table-fill">
+            <thead>
+                <tr>
+                    <th colspan="2" class="text-center">User Profile</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>First Name</td>
+                    <td>{{ userDetails.fullName.split(' ')[0] }}</td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td>{{ userDetails.fullName.split(' ')[1] }}</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>{{ userDetails.email }}</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="text-center">
+                        <input type="button" (click)="onLogout()" value="Logout" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="wrapper-70 fadeInDown">
+        <table *ngIf="userDetails" class="table-fill-right">
+            <thead>
+                <tr>
+                    <th class="text-center">Survey List</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="searchBox">
+                    <input type="text" name="search" placeholder="Search...">
+                </tr>
+                <tr *ngFor="let surveyList of surveyListService.surveyLists">
+                    <td (click)="onSurveyId(surveyList)">{{ surveyList.description.surveyName }} - {{ surveyList.description.lecturer }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="wrapper fadeInDown">
+    <div id="surveyFormContent" *ngIf="!userDetails">
+        <p>{{ surveyItem.description.surveyName }} - {{ surveyItem.description.lecturer }}</p>
+        <div class="question1">
+            <p>{{ questionInSurveyList[0].questionText }}</p>
+            <input type="radio" name="answer1" [(ngModel)]="surveyItem.questions[0].offeredAnswer" value="1">Có
+            <input type="radio" name="answer1" [(ngModel)]="surveyItem.questions[0].offeredAnswer" value="2">Không
+        </div>
+        <div class="question2">
+            <p>{{ questionInSurveyList[1].questionText }}</p>
+            <input type="radio" name="answer2" [(ngModel)]="surveyItem.questions[1].offeredAnswer" value="1">Có
+            <input type="radio" name="answer2" [(ngModel)]="surveyItem.questions[1].offeredAnswer" value="2">Không
+        </div>
+        <div class="question3">
+            <p>{{ questionInSurveyList[2].questionText }}</p>
+            <input type="radio" name="answer3" [(ngModel)]="surveyItem.questions[2].offeredAnswer" value="1">Có
+            <input type="radio" name="answer3" [(ngModel)]="surveyItem.questions[2].offeredAnswer" value="2">Không
+        </div>
+        <div class="question4">
+            <p>{{ questionInSurveyList[3].questionText }}</p>
+            <input type="radio" name="answer4" [(ngModel)]="surveyItem.questions[3].offeredAnswer" value="1">Có
+            <input type="radio" name="answer4" [(ngModel)]="surveyItem.questions[3].offeredAnswer" value="2">Không
+        </div>
+        <div class="question5">
+            <p>{{ questionInSurveyList[4].questionText }}</p>
+            <input type="radio" name="answer5" [(ngModel)]="surveyItem.questions[4].offeredAnswer" value="1">Có
+            <input type="radio" name="answer5" [(ngModel)]="surveyItem.questions[4].offeredAnswer" value="2">Không
+        </div>
+        <div class="question6">
+            <p>{{ questionInSurveyList[5].questionText }}</p>
+            <input type="radio" name="answer6" [(ngModel)]="surveyItem.questions[5].offeredAnswer" value="1">Có
+            <input type="radio" name="answer6" [(ngModel)]="surveyItem.questions[5].offeredAnswer" value="2">Không
+        </div>
+        <div class="question7">
+            <p>{{ questionInSurveyList[6].questionText }}</p>
+            <input type="radio" name="answer7" [(ngModel)]="surveyItem.questions[6].offeredAnswer" value="1">Có
+            <input type="radio" name="answer7" [(ngModel)]="surveyItem.questions[6].offeredAnswer" value="2">Không
+        </div>
+        <div class="question8">
+            <p>{{ questionInSurveyList[7].questionText }}</p>
+            <input type="radio" name="answer8" [(ngModel)]="surveyItem.questions[7].offeredAnswer" value="1">Có
+            <input type="radio" name="answer8" [(ngModel)]="surveyItem.questions[7].offeredAnswer" value="2">Không
+        </div>
+        <div class="question9">
+            <p>{{ questionInSurveyList[8].questionText }}</p>
+            <input type="radio" name="answer9" [(ngModel)]="surveyItem.questions[8].offeredAnswer" value="1">Có
+            <input type="radio" name="answer9" [(ngModel)]="surveyItem.questions[8].offeredAnswer" value="2">Không
+        </div>
+        <div class="question10">
+            <p>{{ questionInSurveyList[9].questionText }}</p>
+            <input type="radio" name="answer10" [(ngModel)]="surveyItem.questions[9].offeredAnswer" value="1">Có
+            <input type="radio" name="answer10" [(ngModel)]="surveyItem.questions[9].offeredAnswer" value="2">Không
+        </div>
+    </div>
+</div>

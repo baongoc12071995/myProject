@@ -1,0 +1,53 @@
+<div class="wrapper fadeInDown">
+    <div id="surveyFormContent">
+        <form #surveySubmitForm="ngForm">
+            <input type="text" name="_id" #_id="ngModel" [(ngModel)]="surveyListService.selectedSurveyItem._id">
+            <div class="question1">
+                <p *ngFor="let surveyItem of surveyListService.surveyLists"></p>
+                <label>
+                    <input type="radio" name="offeredAnswerQ1" value="yes">Yes
+                </label><br/>
+                <label>
+                    <input type="radio" name="offeredAnswerQ1" value="no">No
+                </label>
+            </div>
+            <div class="question2">
+                <p>Communication - listening, understanding; speaking clearly and directly; sharing information.</p>
+                <label>
+                    <input type="radio" name="offeredAnswerQ2" value="yes">Yes
+                </label><br/>
+                <label>
+                    <input type="radio" name="offeredAnswerQ2" value="no">No
+                </label>
+            </div>
+            <div class="question3">
+                <p>Problem solving - developing creative and innovation solutions; developing pratical solutions; showing independence and identifying problems and solving them.</p>
+                <label>
+                    <input type="radio" name="offeredAnswerQ3" value="yes">Yes
+                </label><br/>
+                <label>
+                    <input type="radio" name="offeredAnswerQ3" value="no">No
+                </label>
+            </div>
+            <div class="question4">
+                <p>Planning and organizing - coordinating tasks and time for self and others; taking initialtive and making decisions; collecting, analyzing and organizing information.</p>
+                <label>
+                    <input type="radio" name="offeredAnswerQ4" value="yes">Yes
+                </label><br/>
+                <label>
+                    <input type="radio" name="offeredAnswerQ4" value="no">No
+                </label>
+            </div>
+            <div class="question5">
+                <p>Learning - having a range of basic IT skills; applying IT as a management tool; being willing to learn new skills.</p>
+                <label>
+                    <input type="radio" name="offeredAnswerQ5" value="yes">Yes
+                </label><br/>
+                <label>
+                    <input type="radio" name="offeredAnswerQ5" value="no">No
+                </label>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
